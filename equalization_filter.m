@@ -1,28 +1,4 @@
-%% 3.1
-
-t2 = 10;
-f2 = 1/t2;
-f1 = f2;
-phi2 = 0;
-phi1 = phi2 ;
-s = @(t) cos(2*pi*f1*t + phi1).*cos(2*pi*f2*t + phi2);
-f_arr = [f2 1/3*f2 2*f2 pi*f2 f2 f2];
-phi_arr = [phi2 phi2 phi2 phi2 phi2+(pi/2) phi2+pi];
-res = integral(s, -1.5*t2 , 1.5*t2);
-
-for i = 1:6
-    f1 = f_arr(i);
-    phi1 = phi_arr(i);
-    s = @(t) cos(2*pi*f1*t + phi1).*cos(2*pi*f2*t + phi2);
-    res = integral(s, -1.5*t2 , 1.5*t2);
-    if res < 0.5 && res > -0.5
-    fprintf("%d) f1=f2 , phi1=phi2 , answer = %.5f  orthogonal\n", i, res);
-    else
-        fprintf("%d) f1=f2 , phi1=phi2 , answer = %.5f  not orthogonal\n", i, res);
-    end
-end
-
-%% 3.18
+%% Three Tap Equalizer
 clear;clc;
 
 x = [0.1 0.3 -0.2 1.0 0.4 -0.1 0.1];
@@ -55,7 +31,7 @@ fprintf("Max ISI component is, z(%d) = %.3f\n", max_idx, max_ISI);
 fprintf("The sum of all ISI components are = %.3f\n", sum_ISI);
 
 
-%% 3.19
+%% 9-Tab Equalizer
 clear;clc;
 
 x = [0.01 0.02 -0.03 0.1 1.0 0.2 -0.1 0.05 0.02];

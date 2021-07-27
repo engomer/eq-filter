@@ -31,7 +31,7 @@ fprintf("Max ISI component is, z(%d) = %.3f\n", max_idx, max_ISI);
 fprintf("The sum of all ISI components are = %.3f\n", sum_ISI);
 
 
-%% 9-Tab Equalizer
+%% 9-Tap Equalizer
 clear;clc;
 
 x = [0.01 0.02 -0.03 0.1 1.0 0.2 -0.1 0.05 0.02];
